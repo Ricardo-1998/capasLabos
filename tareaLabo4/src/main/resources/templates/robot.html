@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmins:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/seguridad}" th:object="${robot}" method="post">
+		<label>Marcar solo si usted es un robot</label>
+		<input type="radio" th:field="*{soyRobot}" th:value="${false}">
+		<span th:errors="*{soyRobot}" style="color:#E81505;"></span><br>
+		
+		<input type="submit" value="Aceptar"><br>
+	</form>
+	<a href="/producto">Regresar</a>
+</body>
+</html>
