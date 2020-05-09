@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html xmins:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
 <title>Venta de Producto</title>
 </head>
-<body>
+<body class="p-3 mb-2 bg-secondary text-white">
+<div style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+	<h1 >Ingresar Producto</h1>
+	<form  th:action="@{/formProducto}" th:object="${producto}" method="post">
+		<div class="form-group" >
+			<div class="p-3 mb-2 bg-dark text-white">	
+				<label>Nombre del producto:</label>
+				<input class="form-control" type="text" th:field="*{nombre}">
+				<span th:errors="*{nombre}" style="color:#ae3232;"></span><br>
+			</div>
+		</div>
+		<div class="form-group" >
+			<div class="p-3 mb-2 bg-dark text-white">	
+				<label>Descripcion del producto:</label>
+				<input class="form-control" type="text" th:field="*{descripcion}">
+				<span th:errors="*{descripcion}" style="color:#ae3232;"></span><br>
+			</div>
+		</div>
+		<div class="form-group" >
+			<div class="p-3 mb-2 bg-dark text-white">	
+				<label>Precio del producto:</label>
+				<input  class="form-control" type="number" th:field="*{precio}">
+				<span th:errors="*{precio}" style="color:#ae3232;"></span><br>
+			</div>
+		</div>
+		<div class="form-group" >
+			<div class="p-3 mb-2 bg-dark text-white">	
+				<label>Fecha de vencimiento del producto:</label>
+				<input  class="form-control" type="text" th:field="*{vencimiento}">
+				<span th:errors="*{vencimiento}" style="color:#ae3232;"></span><br>
+			</div>
+		</div>
+			
+		<input class="btn btn-dark" type="submit" value="Agregar Producto">
+	</form>
+</div>
 
-<h1>Ingresar Producto</h1>
-<form th:action="@{/formProducto}" th:object="${producto}" method="post">
-	<label>Nombre del producto:</label>
-	<input type="text" th:field="*{nombre}">
-	<span th:errors="*{nombre}" style="color:#E81505;"></span><br>
-	
-	<label>Descripcion del producto:</label>
-	<input type="text" th:field="*{descripcion}">
-	<span th:errors="*{descripcion}" style="color:#E81505;"></span><br>
-	
-	<label>Precio del producto:</label>
-	<input type="number" th:field="*{precio}">
-	<span th:errors="*{precio}" style="color:#E81505;"></span><br>
-	
-	<label>Fecha de vencimiento del producto:</label>
-	<input type="text" th:field="*{vencimiento}">
-	<span th:errors="*{vencimiento}" style="color:#E81505;"></span><br>
-	
-	<input type="submit" value="Agregar Producto">
-
-</form>
 
 
 </body>

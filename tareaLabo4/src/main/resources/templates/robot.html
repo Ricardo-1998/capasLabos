@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html xmins:th="http://www.thymeleaf.org">
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body class="p-3 mb-2 bg-secondary text-white" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;"> 
 	<form th:action="@{/seguridad}" th:object="${robot}" method="post">
-		<label>Marcar solo si usted es un robot</label>
-		<input type="radio" th:field="*{soyRobot}" th:value="${false}">
-		<span th:errors="*{soyRobot}" style="color:#E81505;"></span><br>
 		
-		<input type="submit" value="Aceptar"><br>
+		
+		<div class="form-group" >
+			<div class="p-3 mb-2 bg-dark text-white" style="text-align: center;">	
+				<h2>Marcar solo si usted es un robot</h2>
+				<input class="form-control" type="radio" th:field="*{soyRobot}" th:value="${false}">
+				<span th:errors="*{soyRobot}" style="color:#E81505;"></span><br>
+				<input class="btn btn-secondary pull-right" style="position:relative; left: 45%;" type="submit" value="Aceptar"><br>
+				<a href="/producto" style="color:white; position:relative; left: 45%;">Regresar</a>
+			</div>
+			
+		</div>
+		
+		
 	</form>
-	<a href="/producto">Regresar</a>
+	
 </body>
 </html>
