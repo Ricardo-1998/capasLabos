@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<title>Listado de estudiantes</title>
+</head>
+<body>
+	<table class="table table-bordered">
+		<thead class="thead-dark">
+			<th scope="col">Nombre</th>
+			<th scope="col">Apellido</th>
+			<th scope="col">Carne</th>
+			<th scope="col">Carrera</th>
+		</thead>
+		<th:block th:each="estudiante,row:${estudiantes}">
+			<tr>
+				<th scope="row" th:text="${estudiante.nombre}"/>
+				<th scope="row" th:text="${estudiante.apellido}"/>
+				<th scope="row" th:text="${estudiante.carne}"/>
+				<th scope="row" th:text="${estudiante.carrera}"/>
+			</tr>
+		</th:block>	
+	</table>
+</body>
+</html>
