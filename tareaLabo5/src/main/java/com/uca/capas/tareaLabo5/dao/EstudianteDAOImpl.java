@@ -32,7 +32,8 @@ public class EstudianteDAOImpl implements EstudianteDAO{
 		Estudiante estudiante = entityManager.find(Estudiante.class,code);
 		return estudiante;
 	}
-
+	
+	@Override
 	@Transactional
 	public void save(Estudiante estudiante) throws DataAccessException{
 		if(estudiante.getC_usuario() ==null) { 
@@ -42,6 +43,13 @@ public class EstudianteDAOImpl implements EstudianteDAO{
 			entityManager.merge(estudiante); 
 		}
 		
+	}
+	
+	@Override
+	@Transactional
+	public void delete(Integer code) throws DataAccessException {
+		Estudiante estudiante  = entityManager.find(Estudiante.class,code);
+		entityManager.remove(estudiante);
 	}
 
 }

@@ -8,6 +8,7 @@
 <body>
 	<table class="table table-bordered">
 		<thead class="thead-dark">
+			<th scope="col">Codigo</th>
 			<th scope="col">Nombre</th>
 			<th scope="col">Apellido</th>
 			<th scope="col">Carne</th>
@@ -15,6 +16,7 @@
 		</thead>
 		<th:block th:each="estudiante,row:${estudiantes}">
 			<tr>
+				<th scope="row" th:text="${estudiante.c_usuario}"/>
 				<th scope="row" th:text="${estudiante.nombre}"/>
 				<th scope="row" th:text="${estudiante.apellido}"/>
 				<th scope="row" th:text="${estudiante.carne}"/>
@@ -22,5 +24,19 @@
 			</tr>
 		</th:block>	
 	</table>
+	
+
+	<form th:action="@{/borrarEstudiante}" method="post">
+			
+			<label>Borrar estudiante por codigo: </label><input type="number" name="codigo">
+			<input type="submit" class="btn btn-secondary" value="Borrar">
+	</form>
+		
+	<br>
+	<form th:action="@{/inicio}">
+		<input type="submit"  class="btn btn-secondary" value="Regresar">
+	</form>
+	
+	
 </body>
 </html>
