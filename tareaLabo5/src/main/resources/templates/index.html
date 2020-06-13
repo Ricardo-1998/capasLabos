@@ -27,6 +27,25 @@
 		</div>
 		<input type="submit" class="btn btn-primary" value="Agregar Estudiante">
 	</form>
+	
+	<form th:action="@{/filtrar}" method="post">
+		<label>Ingresar cadena por la que se desea filtrar</label><br>
+		<input type="text" name="nombre">
+		<input class="btn btn-primary" type="submit" value = "Filtrar">
+	</form>
+	
+	<form th:action="@{/mostrarDTO}" method="post">
+		<label>Mostrar consulta</label><br>
+		<input type="text" name="nombre">
+		<input class="btn btn-primary" type="submit" value = "DTO">
+	</form>
+	
+
+	<form th:action="@{/actualizarEstudiante}" method="post">
+		<input type="number" name="id" placeholder="4"> <br>
+		<input type="submit" value="editar">
+	</form>
+	
 	<br><button class="btn btn-primary" onclick="window.location.href='/listado'">Listado</button>
 </body>
 </html>
