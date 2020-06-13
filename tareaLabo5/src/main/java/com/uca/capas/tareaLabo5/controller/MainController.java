@@ -137,7 +137,7 @@ public class MainController {
 		}
 	    
 	    @RequestMapping("/actualizar")
-	 	public ModelAndView guardarCliente(@ModelAttribute Estudiante estudiante) {
+	 	public ModelAndView actualizarEstudiante(@ModelAttribute Estudiante estudiante) {
 	 		ModelAndView mav = new ModelAndView();
 	 		estudianteService.update(estudiante);
 	 		mav.setViewName("index");
